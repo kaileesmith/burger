@@ -6,11 +6,11 @@ let burger = {
         orm.all('burgers', (res) => cb(res));
         },
         // The variables cols and vals are arrays.
-    insert(cols, vals, cb) {
+    insertOne(cols, vals, cb) {
         orm.insert('burgers', cols, vals, (res) => cb(res));
     },
 
-    update(objColVals, condition, cb) {
+    updateOne(objColVals, condition, cb) {
         orm.update('cats', objColVals, condition, (res) => cb(res));
     },
 }
