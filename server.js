@@ -22,7 +22,7 @@ const connection = mysql.createConnection({
     port: 3306,
     user: 'root',
     password: 'password',
-    database: 'moviePlannerDB',
+    database: 'burgers_db',
 });
 
 connection.connect((err) => {
@@ -33,8 +33,6 @@ connection.connect((err) => {
 
     console.log(`connected as id ${connection.threadId}`);
     });
-
-    // Start our server so that it can begin listening to client requests.
 
     // Import routes and give the server access to them.
 const routes = require('./controllers/burgers_controller.js');
