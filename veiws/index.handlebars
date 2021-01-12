@@ -1,22 +1,33 @@
 <div class= "row">
 	<div class="col-md-6">
-
-
-<ol class ="BurgList">
-{{#each burgers}}
-	{{#unless devoured}}
-    <form action="/" method="POST">
-	<textarea type="text" name="task"></textarea>
-
-	<button type="submit">Submit</button>
-</form>
-      {{this.id}}. {{this.burger_name}}
-
-      <button data-burgerid="{{this.id}}" class="delmovie">Devour It!</button>
-    </p>
-  </li>
-  {{/each}}
-</ol>
-
-</div>
+{{!-- Not Devoured --}}
+			<ul class ="notDevour">
+			{{#each burgers}}
+				{{#unless devoured}}
+				<li class= "burgOptions1">
+					{{burger_name}}
+				</li>
+				{{/unless}}
+			{{/each}}
+		</ul>
+	</div>
+{{!-- Devoured --}}
+<div class="col-md-6">
+		<ul class ="Devour">
+		{{#each burgers}}
+			{{#if this.devoured}}
+			<li class= "burgOptions2">
+				{{burger_name}}
+			</li>
+			{{/if}}
+		{{/each}}
+		</ul>
+	</div>
+{{!-- Form --}}
+<br>
+<div>
+        <form id="addburger" class="button-size">
+            <textarea type="text" name="movie">Add a Burger</textarea>
+            <button class="btn btn-success" type="submit">Submit!</button>
+        </form>
 </div>
