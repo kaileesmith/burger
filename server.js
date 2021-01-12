@@ -35,6 +35,12 @@ connection.connect((err) => {
     });
 
     // Start our server so that it can begin listening to client requests.
+
+    // Import routes and give the server access to them.
+const routes = require('./controllers/burgers_controller.js');
+
+app.use(routes);
+
     
 app.listen(PORT, () =>
 console.log(`Server listening on: http://localhost:${PORT}`)
