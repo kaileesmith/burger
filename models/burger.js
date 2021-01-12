@@ -2,16 +2,16 @@
 const orm =require('../config/orm');
 
 let burger = {
-    all(cb) {
-        orm.all('burgers', (res) => cb(res));
+    selectAll(cb) {
+        orm.selectAll('burgers', (res) => cb(res));
         },
         // The variables cols and vals are arrays.
     insertOne(cols, vals, cb) {
-        orm.insert('burgers', cols, vals, (res) => cb(res));
+        orm.insertOne('burgers', cols, vals, (res) => cb(res));
     },
 
     updateOne(objColVals, condition, cb) {
-        orm.update('burgers', objColVals, condition, (res) => cb(res));
+        orm.updateOne('burgers', objColVals, condition, (res) => cb(res));
     },
 }
 

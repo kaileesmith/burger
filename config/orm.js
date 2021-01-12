@@ -11,7 +11,7 @@ const printQuestionMarks = (num) => {
 
     // Object for all SQL statement functions
 const orm = {
-    all(tableInput, cb){
+    selectAll(tableInput, cb){
         const queryString = `SELECT * FROM ${tableInput};`;
         connection.query(queryString, (err, result) => {
             if (err) {
