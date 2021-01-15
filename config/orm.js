@@ -11,7 +11,7 @@ const printQuestionMarks = (num) => {
 
     // Object for all SQL statement functions
 const orm = {
-    selectAll(tableInput, cb){
+    selectAll: function(tableInput, cb){
         const queryString = `SELECT * FROM ${tableInput};`;
         connection.query(queryString, (err, result) => {
             if (err) {
@@ -20,7 +20,7 @@ const orm = {
             cb(result);
         });
 },
-    insertOne(table, cols, vals, cb) {
+    insertOne: function(table, cols, vals, cb) {
         let queryString = `INSERT INTO ${table}`;
     
         queryString += ' (';
@@ -41,7 +41,7 @@ const orm = {
     });
     },
 
-    updateOne(table, objColVals, condition, cb) {
+    updateOne: function(table, objColVals, condition, cb) {
         let queryString = `UPDATE ${table}`;
     
         queryString += ' SET ';

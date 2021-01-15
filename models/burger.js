@@ -2,15 +2,15 @@
 const orm =require('../config/orm');
 
 let burger = {
-    selectAll(cb) {
+    selectAll: function(cb) {
         orm.selectAll('burgers', (res) => cb(res));
         },
         // The variables cols and vals are arrays.
-    insertOne(cols, vals, cb) {
+    insertOne: function(cols, vals, cb) {
         orm.insertOne('burgers', cols, vals, (res) => cb(res));
     },
 
-    updateOne(objColVals, condition, cb) {
+    updateOne: function (objColVals, condition, cb) {
         orm.updateOne('burgers', objColVals, condition, (res) => cb(res));
     },
 }
