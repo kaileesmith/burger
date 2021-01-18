@@ -36,4 +36,38 @@ if (devour) {
 					alert("Something went wrong!");
 				}
 			});
-		};
+		});
+	});
+}
+
+// Adding a burger 
+const addBurg = document.getElementById('create-form');
+
+if (addBurg) {
+	addBurg.addEventListener('submit', (e) => {
+	e.preventDefault();
+
+	const newBurgerName = {
+		burger_name: document.getElementById('burger-input').value.trim(),
+		devoured: false
+	};
+
+	fetch("/api/burgers", {
+		method: "POST",
+		headers: {
+			Accept: "application/json",
+			"Content-Type": "application/json",
+		},
+
+		body: JSON.stringify(newBurgerName),
+			}).then((response) => 
+			{
+			if (response.ok) {
+				console.log("Burger added!");
+				location.reload();
+			} else {
+				alert("Somthing went wrong when creating your burger!");
+			}
+		});
+	});
+}

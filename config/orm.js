@@ -9,9 +9,30 @@ const printQuestionMarks = (num) => {
         return arr.toString();
     };
 
+const objToSql = (ob) => {
+    const arr = [];
+
+  // Loop through the keys and push the key/value
+    for (const key in ob) {
+        let value = ob[key];
+
+        if (Object.hasOwnProperty.call(ob, key)) {
+
+        // If string with spaces, add quotations
+            if (typeof value === 'string' && value.indexOf(' ') >= 0) {
+            value = `'${value}'`;
+            }
+            arr.push(`${key}=${value}`);
+        }
+    }
+
+  // Translate array of strings to a single comma-separated string
+    return arr.toString();
+};
+
     // Object for all SQL statement functions
 const orm = {
-    selectAll: function(tableInput, cb){
+    selectAll(tableInput, cb){
         const queryString = `SELECT * FROM ${tableInput};`;
         connection.query(queryString, (err, result) => {
             if (err) {
@@ -20,7 +41,7 @@ const orm = {
             cb(result);
         });
 },
-    insertOne: function(table, cols, vals, cb) {
+    insertOne(table, cols, vals, cb) {
         let queryString = `INSERT INTO ${table}`;
     
         queryString += ' (';
@@ -33,8 +54,8 @@ const orm = {
         console.log(queryString);
 
     connection.query(queryString, vals, (err, result) => {
-    if (err) {
-        throw err;
+        if (err) {
+            throw err;
         }
 
         cb(result);
@@ -45,15 +66,15 @@ const orm = {
         let queryString = `UPDATE ${table}`;
     
         queryString += ' SET ';
-        queryString += "devoured = true";
+        queryString += objToSql(objColVals);
         queryString += ' WHERE ';
         queryString += condition;
-        queryString += objToSql(objColVals);
 
-        console.log(queryString);
+
+    console.log(queryString);
     connection.query(queryString, (err, result) => {
-    if (err) {
-        throw err;
+        if (err) {
+            throw err;
         }
 
         cb(result);
