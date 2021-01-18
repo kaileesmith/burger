@@ -1,6 +1,7 @@
 <div class= "row">
 	<div class="col-md-6">
 {{!-- Not Devoured --}}
+	<h2>Pick a burger to eat!</h2>
 			<ul class ="notDevour">
 			{{#each burgers}}
 				{{#unless devoured}}
@@ -14,6 +15,7 @@
 	</div>
 {{!-- Devoured --}}
 <div class="col-md-6">
+	<h2>Devoured Burgers!</h2>
 		<ul class ="Devour">
 		{{#each burgers}}
 			{{#if this.devoured}}
@@ -27,8 +29,9 @@
 {{!-- Form --}}
 <br>
 <div>
-        <form id="addburger" class="button-size">
-            <textarea type="text" name="burger"></textarea>
-            <button class="btn btn-dark" type="submit">Submit!</button>
+	<h3 class="desColor"> Enter a burger you want to eat and click the submit button.</h3>
+        <form class="create-form">>
+			<input type="text" id="burger-input" class="form-control" placeholder="Enter a burger to devour">
+            <button class="addBurg" type="input">Submit!</button>
         </form>
 </div>

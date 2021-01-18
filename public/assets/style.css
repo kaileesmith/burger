@@ -1,20 +1,52 @@
 body {
-    background-color: #d3d3d3;
+    background-color: #000000;
 }
 
 img {
-    align-content: center;
+    width: 300px;
+    height: 275px;
+    margin-top: 0;
+
+}
+
+.container{
+margin-left: 700px;
+margin-right: auto;
 }
 
 .titleColor {
-    color: #C6001D;
+    color: #cb4b38;
 
+}
+
+h2{
+    color:#acd889 ;
+}
+
+li {
+    padding: 5px;
+    margin: 5px;
 }
 
 .desColor {
-    color: #FFEF00;
+    color: #ffbe40;
 }
 
-.burglogo{
-    align-content: center;
+.notDevour{
+    color: #ffffff ;
+}
+
+.Devour{
+    color: #ffffff ;
+}
+
+#burger{
+    outline:#ffbe40;
+    outline-style: ridge;
+    background-color: black;
+    color: #ffbe40;
+}
+
+submitBtn{
+    color: rgb(43, 226, 98);
 }
