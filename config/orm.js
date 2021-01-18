@@ -62,7 +62,7 @@ const orm = {
     });
     },
 
-    updateOne: function(table, objColVals, condition, cb) {
+    updateOne(table, objColVals, condition, cb) {
         let queryString = `UPDATE ${table}`;
     
         queryString += ' SET ';
