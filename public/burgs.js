@@ -1,0 +1,6 @@
+// Wait until the DOM is fully loaded.
+document.addEventListener("DOMContentLoaded", (event) => {
+	if (event) {
+		console.info("DOM loaded");
+	}
+});
