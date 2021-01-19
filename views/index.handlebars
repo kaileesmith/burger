@@ -1,37 +1,41 @@
 <div class= "row">
-	<div class="col-md-6">
-{{!-- Not Devoured --}}
-	<h2>Pick a burger to eat!</h2>
-			<ul class ="notDevour">
-			{{#each burgers}}
-				{{#unless devoured}}
-				<li class= "burgOptions1">
-					{{burger_name}}
-					<button type="submit" class="btn btn-warning devBtn" data-id="{{id}}">Devour it!</button>
-				</li>
-				{{/unless}}
-			{{/each}}
-		</ul>
-	</div>
+		<div class="col-md-6">
+	{{!-- Not Devoured --}}
+		<h2 class="text-center notdevburgs">Pick a burger to eat!</h2>
+				<ul class ="notDevour">
+				{{#each burgers}}
+					{{#unless devoured}}
+					<li class="text-center burgOptions1">
+						{{burger_name}}
+						<button class="btn btn-danger devBtn" data-id="{{id}}" type="submit">Devour it!</button>
+					</li>
+					{{/unless}}
+				{{/each}}
+			</ul>
+		</div>
 {{!-- Devoured --}}
 <div class="col-md-6">
-	<h2>Devoured Burgers!</h2>
-		<ul class ="Devour">
-		{{#each burgers}}
-			{{#if this.devoured}}
-			<li class= "burgOptions2">
-				{{burger_name}}
-			</li>
-			{{/if}}
-		{{/each}}
-		</ul>
+		<h2 class="text-center devburgs">Devoured Burgers!</h2>
+			<ul class ="Devour">
+			{{#each burgers}}
+				{{#if this.devoured}}
+				<li class= "text-center burgOptions2">
+					{{burger_name}}
+				</li>
+				{{/if}}
+			{{/each}}
+			</ul>
 	</div>
-{{!-- Form --}}
-<br>
-<div>
-	<h3 class="desColor"> Enter a burger you want to eat and click the submit button.</h3>
-        <form class="create-form">>
-			<input type="text" id="burger-input" class="form-control" placeholder="Enter a burger to devour">
-            <button class="addBurg" type="input">Submit!</button>
-        </form>
 </div>
+
+{{!-- Form --}}
+<div class="container2">
+	<div class= "row col-md-5">
+		<h3 class="desColor text-center"> Enter a burger you want to eat</h3>
+			<form class="create-form">
+				<input type="text" id="burger-input" class="form-control" placeholder="Enter a burger to devour">
+				<button class= "btn btn-warning addBurg" type="submit">Submit!</button>
+			</form>
+	</div>
+</div>
+

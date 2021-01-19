@@ -1,26 +1,24 @@
 body {
-    background-color: #000000;
+    background-color: #000000!important;
 }
 
 img {
-    width: 300px;
-    height: 275px;
-    margin-top: 0;
-
-}
-
-.container{
-margin-left: 700px;
-margin-right: auto;
+    height: 300px;
+    width: 375px;
+    margin-top: 25px;
 }
 
 .titleColor {
     color: #cb4b38;
+    font-family: 'Coda Caption', sans-serif;
+    font-size: xxx-large;
 
 }
 
 h2{
     color:#acd889 ;
+    font-family: 'Roboto', sans-serif;
+    font-size: x-large;
 }
 
 li {
@@ -30,6 +28,8 @@ li {
 
 .desColor {
     color: #ffbe40;
+    font-family: 'Roboto', sans-serif;
+    float: right;
 }
 
 .notDevour{
@@ -40,13 +40,20 @@ li {
     color: #ffffff ;
 }
 
-#burger{
+#burger-input{
     outline:#ffbe40;
     outline-style: ridge;
     background-color: black;
     color: #ffbe40;
+    font-family: 'Roboto', sans-serif;
 }
 
-submitBtn{
-    color: rgb(43, 226, 98);
+.burgOptions1, .burgOptions2{
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
 }
+
+.container2{
+    margin-left: 750px;
+}
+
